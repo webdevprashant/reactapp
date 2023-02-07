@@ -1,4 +1,6 @@
 FROM reactimg:v1
-COPY src/App.js /root/app2/src/
-WORKDIR /root/app2/
+RUN npx create-react-app /react-app
+WORKDIR /react-app
+COPY ./package.json /react-app
+COPY . .
 CMD npm start
